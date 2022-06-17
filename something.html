@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //modell
+            function text (color, size, texto, emoji){
+            this.color =  color,
+            this.size = size,
+            this.texto = texto,
+            this.emoji = emoji
+        
+            
+            
+             }
+
+         
+
+
+         let text1 = new text('green', 30, 'This is your FIRST obejct text', '&#129409' )
+         let text2 = new text('blue', 34, 'This is your SECOND obejct text', '&#128018' )
+         let text3 = new text('red', 38, 'This is your THIRD obejct text', '&#127940' )
+         let text4 = new text('purple', 42, 'This is your FOURTH obejct text ', '&#128051' )
+
+
+         let arrayObjects = [text1, text2, text3, text4 ]
+
+
+
+         
+        //view
+        updateView()
+        function updateView(){
+            let html = "";
+
+            //`<div style="color:${text1.color};font-size:${text1.size}px">${text1.texto}</div>`
+
+            for (let i = 0; i < arrayObjects.length; i++) {
+                html+= `<br><div style="color:${arrayObjects[i].color}; font-size:${arrayObjects[i].size}px "> ${arrayObjects[i].texto}${arrayObjects[i].emoji}</div> `
+            }
+ 
+
+
+
+            document.getElementById('app').innerHTML = html;
+        }
+
+        //controller
+    </script>
+</body>
+</html>
